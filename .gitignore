@@ -162,3 +162,5 @@ cython_debug/
 *.sh
 *.txt
 .vscode/
+*.tgz
+.Python-3.11.4/
