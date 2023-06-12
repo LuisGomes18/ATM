@@ -24,12 +24,12 @@ def metodo_dois_factores():
         type(img)
         img.save("Dois_Factores.png")
 
-        numero_usuario = int(input('Insira o numero do 2 factores: '))
+        numero_usuario = int(input('\n\nInsira o numero do 2 factores: '))
         if numero_sorteado == numero_usuario:
-            print('Acesso Granted')
+            print('\nAcesso Granted')
             break
         elif numero_sorteado != numero_usuario:
-            print('Acess Denied')
+            print('\nAcess Denied')
 
 if DEBUG == 0:
     pass

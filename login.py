@@ -3,6 +3,7 @@ Json para poder extrair os dados dos ficheiros
 '''
 from json import loads
 from dois_factores import metodo_dois_factores
+from os import remove
 
 with open('Data/Dados_Login.json', 'r', encoding='utf-8') as dados_lg:
     conteudo = dados_lg.read()
@@ -33,6 +34,7 @@ def login():
             break
         elif numero_conta in Numeros_das_Contas or password != password_usuario:
             print('Acess Denied')
+        remove('/workspaces/ATM/Dois_Factores.png')
 
 if DEBUG == 1:
     pass
