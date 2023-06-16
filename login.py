@@ -2,8 +2,8 @@
 Json para poder extrair os dados dos ficheiros
 '''
 from json import loads
+from pathlib import Path
 from dois_factores import metodo_dois_factores
-from os import remove
 
 with open('Data/Dados_Login.json', 'r', encoding='utf-8') as dados_lg:
     conteudo = dados_lg.read()
@@ -15,8 +15,10 @@ Numeros_das_Contas = [
     dados["Login_3"]["Numero_Conta"]]
 
 DEBUG = 0
+CAMINHO_DO_FICHEIRO = "/workspaces/ATM/Dois_Factores.png"
+caminho_ficheiro = Path(CAMINHO_DO_FICHEIRO)
 
-def login():
+def logins():
     '''
     Login
     '''
@@ -34,9 +36,13 @@ def login():
             break
         elif numero_conta in Numeros_das_Contas or password != password_usuario:
             print('Acess Denied')
-        remove('/workspaces/ATM/Dois_Factores.png')
 
-if DEBUG == 1:
+    if caminho_ficheiro.exists():
+        caminho_ficheiro.unlink()
+    else:
+        pass
+
+if DEBUG == 0:
     pass
 else:
-    login()
+    logins()
